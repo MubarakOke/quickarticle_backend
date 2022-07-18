@@ -9,7 +9,8 @@ dotenv.config({path: './config.env'})
 
 
 const server= new ApolloServer({ introspection: true, 
-                                playground: true, 
+                                playground: true,
+                                cache: "bounded", 
                                 typeDefs, 
                                 resolvers,
                                 csrfPrevention: true,
