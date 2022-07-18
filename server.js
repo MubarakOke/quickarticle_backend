@@ -24,7 +24,7 @@ server.start().then(()=>{
     server.applyMiddleware({app})
 })
 
-app.listen(process.env.PORT, async ()=>{
+app.listen(process.env.PORT|| 3000, async ()=>{
     console.log(`App running on port ${process.env.PORT}`)
     try{
         await db.sequelize.authenticate()
