@@ -16,7 +16,7 @@ const userResolver= {
             // Find user
             const user = await db.User.findOne({where : {email}})
             if(!user || !await user.checkPassword(password, user.password)){ // check password
-                throw new Error("invalid login credentials")
+                throw new Error("Invalid login credentials")
             }
             // Generate token
             const token= signToken(user.id)

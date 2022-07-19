@@ -6,7 +6,7 @@ const articleResolver= {
             if (!authUser){ // check user authentication
                 throw new Error("User has no access, please log in")
             }
-            return await db.Article.findAll()
+            return await db.Article.findAll({order:[['id', 'DESC']]})
         },
 
         getArticle: async (_, {id}, context)=> await db.Article.findByPk(id)
